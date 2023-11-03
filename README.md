@@ -53,7 +53,7 @@ impl Player{
 ```
 ### Note
 Every function that is recognized by gdtosignalrs needs to have body, including signals(even if empty).
-Every function will have arguments counted, but self not included in the count.
+Every function will have arguments counted, but 'self' argument is not included in this count.
 
 ### Example output
 
