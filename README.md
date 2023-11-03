@@ -25,7 +25,7 @@ Use --help for more information.
 
 ## Example (input/output)
 
-### Example of input
+### Example input
 This example is using function signatures as string names.
 ```rust
 
@@ -51,7 +51,11 @@ impl Player{
 	fn player_signal(text: GodotString){}
 }
 ```
-### Example of output
+### Note
+Every function that is recognized by gdtosignalrs needs to have body, including signals(even if empty).
+
+
+### Example output
 
 Both outputs will contain a version of:
 ```rust
@@ -98,6 +102,13 @@ pub const player_signal_ex: GeneratedFunctionAlias = GeneratedFunctionAlias{
 }
 ```
 
+#### mod.rs
+gdtosignalrs will also generate mod.rs module file containing only:
+```rust
+pub mod signal;
+pub mod func;
+```
+
 ### Now to put everything together
 We can replace string version in project and use statically typed ones instead:
 
@@ -131,12 +142,6 @@ impl Player{
 As long as gdtosignalrs is called each change/save in editor of you choice,
 there should not be situation where renamed signal or func be undetected past build.
 
-### Note
-gdtosignalrs will also generate mod.rs module file containing only:
-```rust
-pub mod signal;
-pub mod func;
-```
 
 ## Contribution
 I do not expect changes, therefore I do not accept contributions.
