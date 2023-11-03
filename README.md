@@ -87,17 +87,17 @@ impl Player{
 ```rust
 pub struct Player;
 impl Player{
-#[allow(non_upper_case_globals)]
-pub const helloworld: GeneratedFunctionAlias = GeneratedFunctionAlias{
-	func: "helloworld",
-	arg_count: 1
-};
+	#[allow(non_upper_case_globals)]
+	pub const helloworld: GeneratedFunctionAlias = GeneratedFunctionAlias{
+		func: "helloworld",
+		arg_count: 1
+	};
 
-#[allow(non_upper_case_globals)]
-pub const player_signal_ex: GeneratedFunctionAlias = GeneratedFunctionAlias{
-	func: "player_signal_ex",
-	arg_count: 1
-};
+	#[allow(non_upper_case_globals)]
+	pub const player_signal_ex: GeneratedFunctionAlias = GeneratedFunctionAlias{
+		func: "player_signal_ex",
+		arg_count: 1
+	};
 
 }
 ```
