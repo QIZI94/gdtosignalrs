@@ -15,7 +15,7 @@ Then just run:
 ```bash
 cargo build --release
 ```
-Binary files should be located in target/release/gdtosignalrs.
+Binary file should be located at target/release/gdtosignalrs.
 
 ## Usage
 ```bash
