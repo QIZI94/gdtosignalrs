@@ -53,7 +53,7 @@ impl Player{
 ```
 ### Note
 Every function that is recognized by gdtosignalrs needs to have body, including signals(even if empty).
-
+Every function will have arguments counted, but self not included in the count.
 
 ### Example output
 
@@ -140,7 +140,7 @@ impl Player{
 ```
 
 As long as gdtosignalrs is called each change/save in editor of you choice,
-there should not be situation where renamed signal or func be undetected past build.
+there should not be situation where renamed/removed signal or func would be undetected past build.
 
 
 ## Contribution
