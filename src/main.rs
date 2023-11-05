@@ -47,7 +47,7 @@ fn main(){
 		process::exit(1);
 	}
 
-	let files: Vec<PathBuf> = ScanDir::files().read(args.input_directory.clone(), |iter| {
+	let files: Vec<PathBuf> = ScanDir::files().walk(args.input_directory.clone(), |iter| {
 		iter.filter(|&(_, ref name)| name.ends_with(".rs"))
 			.map(|(entry, _)| entry.path())
 			.collect()
