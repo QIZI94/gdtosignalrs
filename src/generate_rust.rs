@@ -12,7 +12,7 @@ type FunctionsInStruct = HashMap<String, FunctionsOfSameType>;
 const GENERATED_FUNCTION_ALIAS_STRUCT: &str =
 "
 pub struct GeneratedFunctionAlias{
-	pub func: &'static str,
+	pub name: &'static str,
 	pub arg_count: usize
 }
 \n
@@ -47,7 +47,7 @@ fn create_structs_and_functions(functions_in_structs: &FunctionsInStruct) -> Str
 			source.push_str(": GeneratedFunctionAlias = ");
 			source.push_str("GeneratedFunctionAlias{\n");
 
-			source.push_str("\t\tfunc: \"");
+			source.push_str("\t\tname: \"");
 			source.push_str(function_name);
 			source.push_str("\",\n");
 			source.push_str("\t\targ_count: ");
