@@ -2,12 +2,12 @@ use std::fs::File;
 use std::fs::create_dir_all;
 use std::io::prelude::*;
 use std::io::Error;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 use crate::parse_rust::{FunctionType, StructAndFunctions};
 
 type FunctionsOfSameType = Vec<(String, usize)>;
-type FunctionsInStruct = HashMap<String, FunctionsOfSameType>;
+type FunctionsInStruct = BTreeMap<String, FunctionsOfSameType>;
 
 const GENERATED_FUNCTION_ALIAS_STRUCT: &str =
 "
@@ -86,7 +86,7 @@ pub fn generate_rust_module(dir_path: &String, structs_and_functions: &StructAnd
 
 			Some((key.clone(), functions_array))		
 		}
-	).collect::<HashMap<_, _>>();
+	).collect::<BTreeMap<_, _>>();
 
 	let funcs: FunctionsInStruct = structs_and_functions.iter().filter_map(
 		|(key,	functions)|{
@@ -102,7 +102,7 @@ pub fn generate_rust_module(dir_path: &String, structs_and_functions: &StructAnd
 
 			Some((key.clone(), functions_array))		
 		}
-	).collect::<HashMap<_, _>>();
+	).collect::<BTreeMap<_, _>>();
 	//for (struct_key, functions) in structs_and_functions{
 
 	//}

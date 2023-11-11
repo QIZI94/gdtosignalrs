@@ -2,14 +2,14 @@ use std::error::Error;
 use std::fs::File;
 use std::io::Read;
 use syn::FnArg;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 pub enum FunctionType{
 	Func(String, usize),
 	Signal(String, usize)
 }
 
-pub type StructAndFunctions = HashMap<String, Vec<FunctionType>>;
+pub type StructAndFunctions = BTreeMap<String, Vec<FunctionType>>;
 
 pub fn parse_rust_file(structs_and_functions: &mut StructAndFunctions, path: String) -> Result<(), Box<dyn Error>> {
     let mut file = File::open(path)?;
